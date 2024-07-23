@@ -44,6 +44,15 @@ class PostController {
     session.flash({ notification: "Data Berhasil Diubah!" });
     return response.route("posts.index");
   }
+
+  async delete({ request, response, session, params }) {
+    const id = params.id;
+    const post = await Post.find(id);
+    await post.delete();
+
+    session.flash({ notification: "Data Berhasil Dihapus!" });
+    return response.route("posts.index");
+  }
 }
 
 module.exports = PostController;

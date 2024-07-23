@@ -21,5 +21,6 @@ Route.get("/posts/create", "PostController.create").as("posts.create");
 Route.post("/posts/store", "PostController.store").as("posts.store");
 Route.get("/posts/:id/edit", "PostController.edit").as("posts.edit");
 Route.post("/posts/:id", "PostController.update").as("posts.update");
+Route.get("/posts/delete/:id", "PostController.delete").as("posts.delete");
 
 Route.on("/").render("welcome");
